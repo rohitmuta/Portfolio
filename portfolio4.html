@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rohit Mahuli | Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: #333;
+            background-color: #f9f9f9;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+		
+		html {
+            scroll-behavior: smooth; /* Enable smooth scrolling */
+        }
+		
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 50px;
+            background: #0e01f836;
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        header h1 {
+            font-size: 1.8rem;
+            font-weight: 600;
+        }
+
+        header nav a {
+            text-decoration: none;
+            color: #333;
+            margin: 0 20px;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        header nav a:hover {
+            color: #f8c301;
+        }
+
+        .hero {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(to bottom, #f9f9f9, #5200ff45);
+            padding: 0 20px;
+            text-align: center;
+        }
+
+        .hero h2 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 40px;
+            max-width: 700px;
+            color: #555;
+        }
+
+        .hero a {
+            padding: 12px 30px;
+            background: #f8c301;
+            color: #454545;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            border-radius: 30px;
+            transition: background 0.3s, transform 0.3s;
+        }
+
+        .hero a:hover {
+            background: #e0b000;
+            transform: scale(1.05);
+        }
+
+		a.scroll-link {
+		text-decoration: none;
+		color: inherit; /* Use the current text color */
+		}
+
+		a.scroll-link:hover {
+		color: #f8c301; /* Or any color you want for hover effect */
+		}
+		
+        section {
+            padding: 80px 20px;
+            text-align: center;
+        }
+
+        section h3 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            font-weight: 600;
+            color: #333;
+        }
+
+        section p {
+            max-width: 800px;
+            margin: 0 auto 40px;
+            font-size: 1.2rem;
+            color: #666;
+        }
+
+        .projects {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+			
+			/*align-items: center; /* Vertically center the items */
+			text-align: center;
+        }
+
+        .project {
+            background: #fff;
+            border-radius: 15px;
+            overflow: hidden;
+            width: 300px;
+			padding-bottom: 20px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+			margin-bottom: 30px; /* Adds spacing between rows if needed */
+        }
+
+        .project:hover {
+            transform: scale(1.05);
+        }
+
+        .project img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .project h4 {
+            margin: 20px;
+            font-size: 1.2rem;
+            color: #333;
+        }
+
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            /*margin-top: 40px;*/
+        }
+
+        .tech-stack .tech-item {
+            background: #fff;
+            padding: 10px;
+            border-radius: 15px;
+            width: 150px;
+			height: 150px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .tech-stack .tech-item:hover {
+            transform: scale(1.1);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .tech-stack .tech-item img {
+            width: 60%;
+            height: 60px;
+            margin-bottom: 10px;
+			border-radius: 10px; /* Smoothen the borders */
+			transition: transform 0.3s; /* Optional: Smooth scaling transition */
+        }
+
+        footer {
+            padding: 20px;
+            text-align: center;
+            background: #333;
+            color: #fff;
+        }
+
+        footer p {
+            font-size: 0.9rem;
+            color: #ccc;
+        }
+
+        footer a {
+            color: #f8c301;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+	<script>
+		document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+			anchor.addEventListener('click', function (e) {
+				e.preventDefault();
+
+				document.querySelector(this.getAttribute('href')).scrollIntoView({
+					behavior: 'smooth'
+				});
+			});
+		});
+	</script>
+</head>
+<body id="top">
+    <header>
+        <h1><a href="#top" class="scroll-link">Rohit Mahuli</a></h1>
+        <nav>
+            <a href="#about">About</a>
+            <a href="#projects">Projects</a>
+            <a href="#techstack">Tech Stack</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+    <div class="hero">
+        <h2>Welcome to My Portfolio</h2>
+        <p>Hi, I'm Rohit Mahuli. A passionate developer with expertise in building scalable web solutions and creating innovative applications.</p>
+        <a href="#projects">Explore My Work</a>
+    </div>
+
+    <section id="about">
+        <h3>About Me</h3>
+        <p>I am a recent Master's graduate in Computer Science and Engineering, specializing in Java backend development, cloud solutions, and modern web technologies. With over three years of professional experience, I bring creativity and efficiency to every project I work on.</p>
+    </section>
+
+    <section id="projects">
+        <h3>My Projects</h3>
+        <div class="projects">
+            <div class="project">
+                <img src="images/reinforcement_learning.png" alt="Project 1">
+                <h4><a href="https://github.com/rohitmuta/Reinforcement-Learning" class="scroll-link" target="_blank">Machine Learning: Reinforcement Learing</a></h4><small>Q-Learning and policy iteration on the Frozen Lake environment.</small>
+            </div>
+            <div class="project">
+                <img src="images/parking2.jpg" alt="Project 2">
+                <h4><a href="https://github.com/rohitmuta/Parking-Management-System" class="scroll-link" target="_blank">Parking Management System</a></h4><small>Java Spring Boot REST API for a parking system</small>
+            </div>
+            <div class="project">
+                <img src="images/python_game.jpg" alt="Project 3">
+                <h4><a href="https://github.com/rohitmuta/2D-Game" class="scroll-link" target="_blank">Enhanced Collecting Game using Python</a></h4><small>Simple 2D collecting game built using Python and the Pygame library</small>
+            </div>
+        </div>
+    </section>
+
+    <section id="techstack">
+        <h3>Tech Stack</h3>
+        <div class="tech-stack">
+            <div class="tech-item">
+                <img src="images/java_logo.webp" alt="Java">
+                <p>Java</p>
+            </div>
+			<div class="tech-item">
+                <img src="images/spring_logo.png" alt="Spring Boot">
+                <p>Spring Boot</p>
+            </div>
+            <div class="tech-item">
+                <img src="images/.net_logo.png" alt=".NET">
+                <p>.NET</p>
+            </div>
+			<div class="tech-item">
+                <img src="images/mysql_logo.png" alt="MySQL">
+                <p>MySQL</p>
+            </div>
+            <div class="tech-item">
+                <img src="images/postgresql_logo.webp" alt="PostgreSQL">
+                <p>PostgreSQL</p>
+            </div>
+            <div class="tech-item">
+                <img src="images/aws_logo.png" alt="AWS">
+                <p>AWS</p>
+            </div>
+			<div class="tech-item">
+                <img src="images/azure_logo.png" alt="Azure">
+                <p>Azure</p>
+            </div>
+			<div class="tech-item">
+                <img src="images/docker_logo.png" alt="Docker">
+                <p>Docker</p>
+            </div>
+			<div class="tech-item">
+                <img src="images/kubernetes_logo.png" alt="Kubernetes">
+                <p>Kubernetes</p>
+            </div>
+            <div class="tech-item">
+                <img src="images/javaScript_logo.png" alt="JavaScript">
+                <p>JavaScript</p>
+            </div>
+			<div class="tech-item">
+                <img src="images/react_logo.jpg" alt="ReactJS">
+                <p>ReactJS</p>
+            </div>
+			<div class="tech-item">
+                <img src="images/angular_logo.png" alt="Angular">
+                <p>Angular</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <h3>Contact Me</h3>
+        <p>Feel free to reach out to me for collaboration or any exciting opportunities. Let's build something amazing together!</p>
+        <p>Email: rohit.mahuli97@gmail.com</p>
+		<p> <a href="https://www.linkedin.com/in/rohit-mahuli" class="scroll-link" target="_blank">LinkedIn</a></p>
+        <p><a href="https://github.com/rohitmuta" class="scroll-link" target="_blank">Github</a></p>
+		<p><a href="https://drive.google.com/file/d/1B_ziYqoEu0_WDT_CTcjQ3gACURlnwbFV/view?usp=drive_link" class="scroll-link" target="_blank">Resume</a></p>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Rohit Mahuli. All Rights Reserved.</p>
